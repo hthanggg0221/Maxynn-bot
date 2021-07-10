@@ -17,7 +17,7 @@ module.exports = {
             .setDescription(`${member.user} ${member.user.tag}`)
             .setFooter(`ID: ${member.user.id}`, `${client.user.displayAvatarURL({ dynamic: true })}`);
         if (roles.length > 0) {
-            leaveembed.addField('Roles', `${roles.join(', ')}`);
+            leaveembed.addField('Vai trò', `${roles.join(', ')}`);
         }
         const jalchannel = member.guild.channels.cache.get(JaLchannel);
         jalchannel.send(leaveembed);
