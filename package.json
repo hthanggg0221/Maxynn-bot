@@ -1,0 +1,19 @@
+{
+  "name": "f",
+  "version": "1.0.0",
+  "description": "A basic discord bot!!!",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thắnggg",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0"
+  }
+}
