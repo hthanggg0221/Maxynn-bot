@@ -9,12 +9,17 @@ module.exports = {
             .sort((a, b) => b.position - a.position)
             .filter(r => r.id !== member.guild.id)
             .map(r => r);
-        roles.join(", ") || 'none';
         const leaveembed = new MessageEmbed()
             .setAuthor('Thành viên rời khỏi server', `${member.user.displayAvatarURL({ dynamic: true })}`)
             .setColor('0xb076c9')
             .setTimestamp()
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
-            
+            .setDescription(`${member.user} ${member.user.tag}`)
+            .setFooter(`${member.user.id}`, `${client.user.displayAvatarURL({ dynamic: true })}`);
+        if (roles.length > 0) {
+            leaveembed.addField('Roles', `${roles.join(', ')}`);
+        }
+        const jalchannel = member.guild.channels.cache.get(JaLchannel);
+        jalchannel.send(leaveembed);
     }
 }
