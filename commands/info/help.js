@@ -17,10 +17,11 @@ module.exports = {
     },
 };
 
-function getAll(client, message) {
+async function getAll(client, message) {
+	const Maxynn = await client.users.fetch(owner);
 	const embed = new MessageEmbed()
         .setAuthor('Danh sách lệnh', `${client.user.displayAvatarURL()}`)
-		.setFooter(`Để biết thêm thông tin về một lệnh cụ thể, hãy nhấn lệnh ${process.env.PREFIX}help {lệnh}`)
+		.setFooter(`Made by ${Maxynn.tag}`, `https://media.discordapp.net/attachments/700265445638406195/722705498885062696/image0.jpg?width=468&height=468`)
 		.setColor('0xe91e63');
 	let categories;
 	if(message.author.id !== owner) {
@@ -36,6 +37,8 @@ function getAll(client, message) {
         embed.addField(`${id} (${category.size} lệnh)`, category.map(cmd => `\`${cmd.name}\``).join(', '));
         embed.setDescription(`Danh sách lệnh cho bot **${client.user.username}**\nPrefix của bot là: \`${process.env.PREFIX}\`\nBot có tổng số lệnh là: ${client.commands.size}`);
     }
+
+	embed.addField('🔎 Cách sử dụng và công dụng của một lệnh cụ thể', `Sử dụng lệnh: \`${process.env.PREFIX}help <lệnh cần tìm>\`\nChú ý: \`<>\` = bắt buộc, \`[]\` = không bắt buộc`)
 	return message.channel.send(embed);
 }
 
