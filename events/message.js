@@ -25,7 +25,7 @@ module.exports = {
                 .setFooter(`Xem phim cùng ${Maxynn.tag}`, `${Maxynn.displayAvatarURL({ dynamic: true })}`);
             const filmchannels = message.guild.channels.cache.get(filmchannel);
             filmchannels.send(filmembed);
-        }
+        };
 
         const cmd = client.commands.get(commandName) || client.commands.find(c => c.aliases && c.aliases.includes(commandName));
 
