@@ -7,7 +7,8 @@ module.exports = {
     aliases: ["ytb"],
     description: 'Tạo 1 Rich Presence về ứng dụng Youtube Together',
     usage: 'youtube',
-    run: (client, message, args) => {
+    run: async(client, message, args) => {
+        const Maxynn = await client.users.fetch(owner);
         if (!message.content.startsWith(process.env.PREFIX)) return;
 
         let channel = message.member.voice.channel;
@@ -32,7 +33,9 @@ module.exports = {
             const ytbembed = new MessageEmbed()
                 .setAuthor('Lời mời sử dụng Youtube Together', 'https://cdn.discordapp.com/emojis/868823302574059540.png?v=1')
                 .setColor('0xe91e63')
-                .setDescription(`Nhấn vào [link này](https://discord.com/invite/${invite.code}) để bắt đầu xem Youtube cùng nhau tại phòng ${channel}`)
+                .setTimestamp()
+                .setFooter(`Made by ${Maxynn.tag}`, `https://media.discordapp.net/attachments/700265445638406195/722705498885062696/image0.jpg?width=468&height=468`)
+                .setDescription(`Nhấn vào [link này](https://discord.com/invite/${invite.code}) để bắt đầu xem Youtube cùng nhau tại phòng ${channel}`);
             message.channel.send(ytbembed);
         })
     }
