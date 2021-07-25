@@ -8,7 +8,7 @@ module.exports = {
         const Maxynn = await client.users.fetch(owner);
         const logchannels = await client.channels.fetch(logchannel);
         const bulkdeleteembed = new MessageEmbed()
-            .setColor('0xb076c9')
+            .setColor('0xe91e63')
             .setTimestamp()
             .setAuthor(`${messages.first().guild}`, `${client.user.displayAvatarURL({ dynamic: true })}`)
             .setDescription(`**${messages.size} tin nhắn đã được xóa ở ${messages.first().channel}.**`)

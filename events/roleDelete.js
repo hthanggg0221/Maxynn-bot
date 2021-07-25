@@ -6,7 +6,7 @@ module.exports = {
     on: true,
     run (role) {
         const rdembed = new MessageEmbed()
-            .setColor('0xb076c9')
+            .setColor('0xe91e63')
             .setAuthor(`${role.guild.name}`, `${role.guild.iconURL({ dynamic: true})}`)
             .setDescription(`**Đã xóa vai trò: ${role.name}**`)
             .setFooter(`ID: ${role.id}`)

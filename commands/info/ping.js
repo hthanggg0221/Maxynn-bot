@@ -12,7 +12,7 @@ module.exports = {
         const Maxynn = await client.users.fetch(owner);
         const msg = await message.channel.send(`<a:loading:778148997176360971> Đang chờ xử lí`);
         const pingembed = new MessageEmbed()
-            .setColor('0xb076c9')
+            .setColor('0xe91e63')
             .setTitle(`<a:docthongbaodi:779853162793926666> **| Ping**`)
             .setDescription(`Dưới đây là độ trễ của bot và độ trễ của Discord API ❤️`)
             .addField('Độ trễ của bot: ',`${Math.floor(msg.createdTimestamp - message.createdTimestamp)}ms`)

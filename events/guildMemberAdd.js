@@ -10,7 +10,7 @@ module.exports =  {
         const autorole = member.guild.roles.cache.get(newmemberrole);
         member.roles.add(autorole);
         const joinedembed = new MessageEmbed()
-            .setColor('0xb076c9')
+            .setColor('0xe91e63')
             .setTimestamp()
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setFooter(`ID: ${member.id}`, `${client.user.displayAvatarURL({ dynamic: true })}`)

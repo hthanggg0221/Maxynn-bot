@@ -21,7 +21,7 @@ function getAll(client, message) {
 	const embed = new MessageEmbed()
         .setAuthor('Danh sách lệnh', `${client.user.displayAvatarURL()}`)
 		.setFooter(`Để biết thêm thông tin về một lệnh cụ thể, hãy nhấn lệnh ${process.env.PREFIX}help {lệnh}`)
-		.setColor('0xb076c9');
+		.setColor('0xe91e63');
 	let categories;
 	if(message.author.id !== owner) {
 		categories = [...new Set(client.commands.filter(cmd => cmd.category !== 'Owner').map(cmd =>cmd.category))];
@@ -55,7 +55,7 @@ function getCMD(client, message, input) {
 		}
 		const hembed = new MessageEmbed()
 			.setTitle(`Chi tiết về lệnh ${capitalizeFirstLetter(cmd.name.toString().toLowerCase())}`)
-			.setColor('0xb076c9')
+			.setColor('0xe91e63')
 			.setFooter('Cú pháp: <> = bắt buộc, [] = không bắt buộc')
 			.setDescription([
 				`**Tên lệnh:** \`${cmd.name}\``,

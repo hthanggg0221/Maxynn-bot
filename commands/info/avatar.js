@@ -18,7 +18,7 @@ module.exports = {
             .setImage(avatar)
             .setFooter(`Được yêu cầu bởi: ${message.author.tag}`, `${message.author.displayAvatarURL({ size: 1024, dynamic: true })}`)
             .setTimestamp()
-            .setColor('0xb076c9');
+            .setColor('0xe91e63');
 		message.channel.send(embed).then(msg => {
             msg.delete({ timeout: 10000 });
         });
