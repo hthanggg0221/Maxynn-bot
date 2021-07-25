@@ -6,6 +6,13 @@ module.exports = {
     on: true,
     run: async(message, client) => {
         const Maxynn = await client.users.fetch(owner);
+        const filmembed = new Discord.MessageEmbed()
+             .setColor('0xe91e63')
+             .setAuthor('Film 🎥')
+             .setTimestamp()
+             .addField('Thông tin film', `${args.join(" ")}`)
+             .setFooter(`Xem phim cùng ${Maxynn.tag}`, `${Maxynn.displayAvatarURL({ dynamic: true })}`);
+        const filmchannels = message.guild.channels.cache.get(filmchannel);
         if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
         if (!message.guild) return;
         if (!message.member) {
@@ -17,13 +24,6 @@ module.exports = {
 
         if (commandName === 'film') {
             message.delete();
-            const filmembed = new Discord.MessageEmbed()
-                .setColor('0xe91e63')
-                .setAuthor('Film 🎥')
-                .setTimestamp()
-                .addField('Thông tin film', `${args.join(" ")}`)
-                .setFooter(`Xem phim cùng ${Maxynn.tag}`, `${Maxynn.displayAvatarURL({ dynamic: true })}`);
-            const filmchannels = message.guild.channels.cache.get(filmchannel);
             filmchannels.send(filmembed);
         };
 
