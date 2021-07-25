@@ -30,7 +30,7 @@ module.exports = {
         }).then(res => res.json()).then(invite => {
             if(!invite.code) return message.channel.send('Đáng buồn thay, tôi không thể bắt đầu Rich Presence Youtube Together')
             const ytbembed = new MessageEmbed()
-                .setAuthor('Lời mời sử dụng Youtube Together')
+                .setAuthor('Lời mời sử dụng Youtube Together', 'https://cdn.discordapp.com/emojis/868823302574059540.png?v=1')
                 .setColor('0xe91e63')
                 .setDescription(`Nhấn vào [link này](https://discord.com/invite/${invite.code}) để bắt đầu xem Youtube cùng nhau tại phòng ${channel}`)
             message.channel.send(ytbembed);
