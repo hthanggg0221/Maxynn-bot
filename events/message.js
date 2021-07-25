@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
+const { owner, filmchannel } = require('../config.json')
 
 module.exports = {
     name: 'message',
     on: true,
     run: async(message, client) => {
+        const Maxynn = await client.users.fetch(owner);
         if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
         if (!message.guild) return;
         if (!message.member) {
@@ -12,6 +14,18 @@ module.exports = {
 
         const args = message.content.slice(process.env.PREFIX.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
+
+        if (commandName === 'film') {
+            message.delete();
+            const filmembed = new Discord.MessageEmbed()
+                .setColor('0xe91e63')
+                .setAuthor('Film 🎥')
+                .setTimestamp()
+                .addField('Thông tin film', `${args.join(" ")}`)
+                .setFooter(`Xem phim cùng ${Maxynn.tag}`, `${Maxynn.displayAvatarURL({ dynamic: true })}`);
+            const filmchannels = message.guild.channels.cache.get(filmchannel);
+            filmchannels.send(filmembed);
+        }
 
         const cmd = client.commands.get(commandName) || client.commands.find(c => c.aliases && c.aliases.includes(commandName));
 
