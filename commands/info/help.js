@@ -20,7 +20,7 @@ module.exports = {
 function getAll(client, message) {
 	const embed = new MessageEmbed()
         .setAuthor('Danh sách lệnh', `${client.user.displayAvatarURL()}`)
-		.setFooter(`Để biết thêm thông tin về một lệnh cụ thể, hãy nhấn lệnh ${prefix}help {lệnh}`)
+		.setFooter(`Để biết thêm thông tin về một lệnh cụ thể, hãy nhấn lệnh ${process.env.PREFIX}help {lệnh}`)
 		.setColor('0xb076c9');
 	let categories;
 	if(message.author.id !== owner) {
@@ -34,7 +34,7 @@ function getAll(client, message) {
 		const category = client.commands.filter(cmd => cmd.category === id);
 
         embed.addField(`${id} (${category.size} lệnh)`, category.map(cmd => `\`${cmd.name}\``).join(', '));
-        embed.setDescription(`Danh sách lệnh cho bot **${client.user.username}**\nPrefix của bot là: \`${prefix}\`\nBot có tổng số lệnh là: ${client.commands.size}`);
+        embed.setDescription(`Danh sách lệnh cho bot **${client.user.username}**\nPrefix của bot là: \`${process.env.PREFIX}\`\nBot có tổng số lệnh là: ${client.commands.size}`);
     }
 	return message.channel.send(embed);
 }
