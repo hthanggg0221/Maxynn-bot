@@ -6,7 +6,7 @@ module.exports = {
     category: '<:Extension:868660497795395624> Extension',
     aliases: ["ytb"],
     description: 'Tạo 1 Rich Presence về ứng dụng Youtube Together',
-    usage: youtube,
+    usage: 'youtube',
     run: (client, message, args) => {
         if (!message.content.startsWith(process.env.PREFIX)) return;
 
