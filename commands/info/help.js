@@ -65,7 +65,7 @@ function getCMD(client, message, input) {
 				`**Tên rút gọn:** \`${cmd.aliases.join(', ') ? cmd.aliases: 'Không có'}\``,
 				`**Chi tiết về lệnh:** ${cmd.description}`,
 				`**Thuộc danh mục:** ${capitalizeFirstLetter(cmd.category.toString().toLowerCase())}`,
-				`**Cách sử dụng:** \`${prefix} ${cmd.usage}\``,
+				`**Cách sử dụng:** \`${process.env.PREFIX} ${cmd.usage}\``,
 			]);
 		message.channel.send(hembed);
 	}
