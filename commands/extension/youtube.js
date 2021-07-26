@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
+const { owner } = require('../../config.json');
 
 module.exports = {
     name: 'youtube',
