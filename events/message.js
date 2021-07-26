@@ -15,8 +15,8 @@ module.exports = {
         const commandName = args.shift().toLowerCase();
 
         if (commandName === 'film') {
-            message.delete();
             const Maxynn = await client.users.fetch(owner);
+            message.delete();
             const filmembed = new Discord.MessageEmbed()
                 .setColor('0xe91e63')
                 .setAuthor('Film 🎥')
@@ -25,7 +25,7 @@ module.exports = {
                 .setFooter(`Xem phim cùng ${Maxynn.tag}`, `${Maxynn.displayAvatarURL({ dynamic: true })}`);
             const filmchannels = message.guild.channels.cache.get(filmchannel);
             filmchannels.send(filmembed);
-        };
+        }
 
         const cmd = client.commands.get(commandName) || client.commands.find(c => c.aliases && c.aliases.includes(commandName));
 

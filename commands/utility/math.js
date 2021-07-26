@@ -9,7 +9,7 @@ module.exports = {
 	aliases: ['calculator', 'calc'],
     usage: 'math <giá trị 1> <phép tính> <giá trị 2>',
     run: async (client, message, args) => {
-	    const Maxynn = await client.users.fetch(owner);
+        const Maxynn = await client.users.fetch(owner);
 		if (!args[0]) return message.channel.send('Vui lòng nhập một phép tính');
 		try {
             const resp = math.evaluate(args.join(' '));
