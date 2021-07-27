@@ -12,7 +12,7 @@ module.exports = {
             .setTimestamp()
             .setFooter(`ID người gửi: ${newMessage.author.id}`)
             .setAuthor(`${newMessage.author.tag}`, `${newMessage.author.displayAvatarURL({ dynamic: true })}`)
-            .setDescription(`Tin nhắn đã được chỉnh sửa ở ${newMessage.channel}`)
+            .setDescription(`Tin nhắn đã được chỉnh sửa ở kênh ${newMessage.channel}`)
             .addFields(
                 { name: 'Nguyên gốc', value: `${oldMessage.content}` },
                 { name: 'Sau chỉnh sửa', value: `${newMessage.content}` },
