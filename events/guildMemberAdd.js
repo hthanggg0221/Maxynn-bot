@@ -33,6 +33,6 @@ module.exports =  {
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setDescription(`Chào mừng ${member} đã đến với server **${member.guild}**! Hãy đọc thêm thông tin về server tại ${sichannels}, đọc luật của server tại ${ruleschannels} và bạn nhớ vào ${rolechannels} để nhận role mà mình thích nhé!!!\nChúc bạn giao lưu vui vẻ tại **${member.guild}**`)
             .setFooter(`Made by ${Maxynn.tag}`, `${Maxynn.displayAvatarURL({ dynamic: true })}`);
-        welcomechannels.send(`${member}\n${welcomeembed}`);
+        welcomechannels.send(`${member}${welcomeembed}`);
     }
 }
