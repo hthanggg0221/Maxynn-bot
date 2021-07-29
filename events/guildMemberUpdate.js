@@ -20,14 +20,5 @@ module.exports = {
             );
         logchannels.send(nicknameembed);
         }
-        else if (newMember.roles.add) {
-            const addembed = new MessageEmbed()
-            .setColor('0xe91e63')
-            .setTimestamp()
-            .setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ dynamic: true })}`)
-            .setFooter(`ID: ${newMember.user.id}`)
-            .setDescription(`${newMember} đã được thêm vai trò \`${newMember.roles.add}\``);
-        logchannels.send(addembed);
-        }
     }
 }
