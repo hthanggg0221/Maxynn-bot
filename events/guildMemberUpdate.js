@@ -12,7 +12,7 @@ module.exports = {
             .setColor('0xe91e63')
             .setTimestamp()
             .setAuthor(`${newMember.user.tag}`, `${newMember.user.displayAvatarURL({ dynamic: true })}`)
-            .setFooter(`ID: ${newMessage.author.id}`)
+            .setFooter(`ID: ${newMember.author.id}`)
             .setDescription(`${newMember} đã đổi biệt danh`)
             .addFields(
                 { name: 'Biệt danh trước', value: `${oldMember.nickname ? oldMember.nickname : 'Không có'}` },
