@@ -16,7 +16,7 @@ module.exports = {
             .setTimestamp()
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setDescription(`${member.user} ${member.user.tag}`)
-            .setFooter(`${member.user.id}`, `${client.user.displayAvatarURL({ dynamic: true })}`);
+            .setFooter(`ID: ${member.user.id}`, `${client.user.displayAvatarURL({ dynamic: true })}`);
         if (roles.length > 0) {
             leaveembed.addField('Roles', `${roles.join(', ')}`);
         }

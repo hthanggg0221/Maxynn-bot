@@ -10,7 +10,7 @@ module.exports = {
         const updateembed = new MessageEmbed()
             .setColor('0xe91e63')
             .setTimestamp()
-            .setFooter(`ID người gửi: ${newMessage.author.id}`)
+            .setFooter(`ID: ${newMessage.author.id}`)
             .setAuthor(`${newMessage.author.tag}`, `${newMessage.author.displayAvatarURL({ dynamic: true })}`)
             .setDescription(`Tin nhắn đã được chỉnh sửa ở kênh ${newMessage.channel}`)
             .addFields(
