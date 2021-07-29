@@ -44,11 +44,8 @@ async function getAll(client, message) {
 
 function getCMD(client, message, input) {
 	const membed = new MessageEmbed();
-
 	const cmd = client.commands.get(input.toLowerCase()) || client.commands.get(client.aliases.get(input.toLowerCase()));
-
 	const info = `Không tìm thấy lệnh tên là: **${input.toLowerCase()}**`;
-
 	if (!cmd || (cmd.ownerOnly == true && message.author.id !== ownerID)) {
 		return message.channel.send(membed.setColor('0xb076c9').setDescription(info));
 	}

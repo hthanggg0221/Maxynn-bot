@@ -7,7 +7,7 @@ module.exports = {
                 name: `Prefix của bot: ${process.env.PREFIX}`,
                 type: 'PLAYING',
             },
-            status: 'dnd',
+            status: 'online',
         });
         console.log(`${client.user.tag} đã hoạt động!`)
     }

@@ -12,7 +12,7 @@ module.exports = {
             .setTimestamp()
             .setFooter(`ID người gửi: ${message.author.id} | ID tin nhắn: ${message.id}`)
             .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL({ dynamic: true})}`)
-            .setDescription(`**Tin nhắn của** ${message.author} **đã bị xóa ở kênh** ${message.channel}\nNội dung: ${message.content}`);
+            .setDescription(`**Tin nhắn của** ${message.author} **đã bị xóa ở** ${message.channel}\nNội dung: ${message.content}`);
         logchannels.send(deleteembed);
     }
 }
