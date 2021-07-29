@@ -13,7 +13,7 @@ module.exports = {
         if (!message.content.startsWith(process.env.PREFIX)) return;
 
         let channel = message.member.voice.channel;
-        if(!channel) return message.reply('Bạn phải ở trong phòng trước khi sử dụng lệnh này!');
+        if(!channel) return message.reply('bạn phải ở trong phòng trước khi sử dụng lệnh này!');
 
         fetch(`https://discord.com/api/v8/channels/${channel.id}/invites`, {
             method: 'POST',
