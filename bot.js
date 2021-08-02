@@ -9,6 +9,25 @@ client.cooldowns = new Discord.Collection();
 const dotenv = require('dotenv');
 dotenv.config();
 
+const RPC = require('discord-rpc');
+const rpc = new RPC.Client({
+    transport: 'ipc'
+})
+
+rpc.on("ready", () => {
+    rpc.setActivity({
+        details: "Chào mừng bạn đến với F Supporter",
+        state: "https://discord.gg/d7v4urK",
+        startTimestamp: new Date(),
+        largeImageKey: "f",
+        largeImageKey: "F Logo",
+        smallImageKey: "heroku",
+        smallImageText: "Hosted by Heroku"
+    })
+
+    console.log("Rich Embed đã hoạt động");
+})
+
 const commandFolders = fs.readdirSync('./commands');
 for (const folder of commandFolders) {
 	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
