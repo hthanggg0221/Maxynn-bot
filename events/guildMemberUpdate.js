@@ -19,5 +19,6 @@ module.exports = {
                 { name: 'Biệt danh hiện tại', value: `${newMember.nickname ? newMember.nickname : 'Không có'}` },
             );
         logchannels.send(nicknameembed);
+        }
     }
 }
