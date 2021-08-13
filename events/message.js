@@ -5,9 +5,9 @@ module.exports = {
     name: 'message',
     on: true,
     run: async(message, client) => {
-        if (!message.content.startsWith(process.env.PREFIX)) return;
         if (message.author.bot) return;
         if (!message.guild) return;
+        if (!message.content.startsWith(process.env.PREFIX)) return;
         if (!message.member) {
             message.member = await message.guild.fetchMember(message);
         }
