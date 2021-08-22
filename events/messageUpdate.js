@@ -5,6 +5,7 @@ module.exports = {
     name: 'messageUpdate',
     on: true,
     run: async(oldMessage, newMessage, client) => {
+        if (newMessage.author.bot || !newMessage.guild) return;
         const Maxynn = await client.users.fetch(owner);
         const logchannels = await client.channels.fetch(logchannel);
         const updateembed = new MessageEmbed()
