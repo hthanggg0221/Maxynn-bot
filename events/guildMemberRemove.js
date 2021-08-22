@@ -5,6 +5,7 @@ module.exports = {
     name: 'guildMemberRemove',
     on: true,
     run (member, client) {
+        if (!member.guild) return;
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)
             .filter(r => r.id !== member.guild.id)
