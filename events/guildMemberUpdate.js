@@ -5,6 +5,7 @@ module.exports = {
     name: 'guildMemberUpdate',
     on: true,
     run: async(oldMember, newMember, client) => {
+        if (!newMember.guild) return;
         const Maxynn = await client.users.fetch(owner);
         const logchannels = await client.channels.fetch(logchannel);
         if (newMember.nickname) {
