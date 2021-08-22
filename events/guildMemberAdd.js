@@ -7,6 +7,7 @@ module.exports =  {
     name: 'guildMemberAdd',
     on: true,
     run: async(member, client) => {
+        if (!member.guild) return;
         const Maxynn = await client.users.fetch(owner);
         const autorole = member.guild.roles.cache.get(newmemberrole);
         member.roles.add(autorole);
