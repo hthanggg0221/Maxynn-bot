@@ -5,7 +5,7 @@ const picExt = [".webp", ".png", ".jpg", ".jpeg", ".gif"];
 const videoExt = [".mp4", ".webm", ".mov"];
 
 module.exports = {
-    name: 'confessionevent',
+    name: 'confession',
     category: '<:DiscordController:810683447001481226> Fun',
     aliases: ['cfs'],
     description: 'Nói một câu nào đó qua bot',
