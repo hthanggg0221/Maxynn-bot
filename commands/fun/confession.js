@@ -35,7 +35,7 @@ module.exports = {
                 });
             };
             await cfsChannel.send(embed).then(async msg => {
-            const emoji = await promptMessage(msg, message.author, 30, [tim]);
+                const emoji = await promptMessage(msg, message.author, 30, [tim]);
             });
         }
     }
