@@ -24,7 +24,7 @@ module.exports = {
                 .setTimestamp()
                 .setDescription(`${args.join(" ")}`)
                 .setFooter(`Được gửi bởi (${message.author.id})`)
-                .setTitle(`${message.guild.name} Event`);
+                .setTitle(`${message.guild.name} Confession`);
             if (message.attachments.array().length > 0) {
                 let attachment = message.attachments.array()[0];
                 picExt.forEach(ext => {
