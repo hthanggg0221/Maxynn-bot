@@ -5,8 +5,8 @@ module.exports = {
     name: 'messageDelete',
     on: true,
     run: async(message, client) => {
-        if (message.author.bot) return;
         if (!message.guild) return;
+        if (message.author.bot) return;
         const Maxynn = await client.users.fetch(owner);
         const logchannels = await client.channels.fetch(logchannel);
         const deleteembed = new MessageEmbed()
