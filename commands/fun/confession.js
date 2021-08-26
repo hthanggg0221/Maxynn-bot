@@ -20,11 +20,11 @@ module.exports = {
             const cfsChannel = client.channels.cache.get(cfschannel);
             if (!cfsChannel) return;
             const embed = new MessageEmbed()
-                .setColor('0xb076c9')
+                .setColor('0xe91e63')
                 .setTimestamp()
                 .setDescription(`${args.join(" ")}`)
                 .setFooter(`Được gửi bởi (${message.author.id})`)
-                .setTitle(`${message.guild.name} Confession`);
+                .setTitle(`${message.guild.name} Event`);
             if (message.attachments.array().length > 0) {
                 let attachment = message.attachments.array()[0];
                 picExt.forEach(ext => {
