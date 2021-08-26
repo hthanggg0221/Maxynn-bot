@@ -16,7 +16,6 @@ module.exports = {
         else {
             await message.react('👀');
             message.delete();
-            
             const cfsChannel = client.channels.cache.get(cfschannel);
             if (!cfsChannel) return;
             const embed = new MessageEmbed()
