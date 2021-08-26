@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { cfschannelevent } = require('../../config.json');
+const { cfschannel } = require('../../config.json');
 const { getMember, promptMessage } = require('../../functions');
 const picExt = [".webp", ".png", ".jpg", ".jpeg", ".gif"];
 const videoExt = [".mp4", ".webm", ".mov"];
@@ -17,7 +17,7 @@ module.exports = {
             await message.react('👀');
             message.delete();
             
-            const cfsChannel = client.channels.cache.get(cfschannelevent);
+            const cfsChannel = client.channels.cache.get(cfschannel);
             if (!cfsChannel) return;
             const embed = new MessageEmbed()
                 .setColor('0xb076c9')
