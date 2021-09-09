@@ -32,7 +32,7 @@ module.exports = {
                 videoExt.forEach(ext => {
                     if (attachment.name.endsWith(ext)) cfsChannel.send(attachment);
                 });
-            };
+            }
             await cfsChannel.send(embed).then(async msg => {
                 const emoji = await promptMessage(msg, message.author, 30, [tim]);
             });
